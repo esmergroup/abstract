@@ -1,0 +1,33 @@
+abstract class Fahrzeug {
+	
+	int tempo = 0;
+	int passagiere = 0;
+	int ps = 0;
+	int turbo;
+	
+	abstract void beschleunigen();
+	abstract void leistung(int turbo);
+	
+	public void verzoegern(int weniger) {
+		tempo = tempo - weniger;
+		if (tempo < 0) {
+			tempo = 0;
+		}
+	}
+	
+	public void anzahlPersonen(int personen) {
+		int passagiere = 0;
+		passagiere = passagiere + personen;
+		System.out.println("Anzahl Personen im PKW: "+passagiere);
+	}
+	
+	public void anzahlLast(double gewicht) {
+		double lkwLast = 5.75;
+		lkwLast = lkwLast + gewicht;
+		System.out.println("Anzahl Last im LKW: "+lkwLast);
+	}
+	
+	public void fahren() {
+		System.out.println(getClass().getSimpleName() + " faehrt: " + tempo);
+	}
+}
