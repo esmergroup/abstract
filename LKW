@@ -1,0 +1,11 @@
+public class LKW extends Fahrzeug {
+	
+	public void beschleunigen() {
+		tempo = tempo + 10;
+	}
+	
+	public void leistung(int turbo) {
+		ps = (ps + turbo) * 100;
+		System.out.println(ps+"\t"+" WATT");
+	}
+}
