@@ -1,0 +1,48 @@
+public class AbstractBsp {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Fahrverhalten von Moped");
+		Moped horex = new Moped();		// Moped hat am Anfang die Geschwindigkeit 0 km/h
+		horex.beschleunigen();			// Sie wird auf die Geschwindigkeit 50 km/h beschleunigt
+		horex.fahren();					// Ausgabe der Momentangeschwindigkeit also 50 km/h
+		horex.verzoegern(20);			// Bremsen um 20 km/h
+		horex.fahren();					// Ausgabe der Momentangeschwindigkeit nach dem Bremsvorgang beträgt 30 km/h
+		
+		System.out.println("");
+		System.out.println("Fahrverhalten von PKW");
+		
+		PKW bmw = new PKW();
+		bmw.beschleunigen();
+		bmw.fahren();
+		bmw.verzoegern(30);
+		bmw.fahren();
+		
+		System.out.println("");
+		System.out.println("Passagiere PKW");
+		
+		bmw.anzahlPersonen(2);
+		bmw.beschleunigen();
+		bmw.fahren();
+		bmw.verzoegern(50);
+		bmw.fahren();
+		bmw.anzahlPersonen(0);
+		
+		System.out.println("");
+		System.out.println("Passagiere LKW");
+		
+		LKW daimler = new LKW();
+		daimler.anzahlLast(7.0);
+		daimler.beschleunigen();
+		daimler.fahren();
+		daimler.verzoegern(-10);
+		daimler.anzahlLast(0);
+		daimler.fahren();
+		
+		System.out.println();
+		daimler.beschleunigen();
+		daimler.leistung(1);
+		bmw.leistung(15);
+		horex.leistung(5);
+	}
+}
